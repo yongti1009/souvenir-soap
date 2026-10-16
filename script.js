@@ -1,14 +1,14 @@
 "use strict";
 
-// 單一商品資料來源。示範價格不是品牌正式售價，可在此統一修改。
+// 單一商品資料來源。價格依使用者於 2026-10-16 提供的售價設定。
 const products = [
-  { id: "petite-jasmine", name: "花信・晨光", original: "滿天星金盞皂", series: "petite", weight: 50, price: 180, oil: "金盞花茉莉精油", flowers: "原色滿天星、台灣肖楠葉片", description: "素白花點與綠葉，把一束小小的晨光留在掌心。", photo: "photo-petite photo-petite-left", alt: "三款合照左側的原色滿天星與肖楠葉片透明皂" },
-  { id: "petite-rose", name: "花信・初綻", original: "滿天星玫瑰皂", series: "petite", weight: 50, price: 180, oil: "玫瑰精油", flowers: "粉色滿天星、台灣肖楠葉片", description: "粉色滿天星，在透明皂體裡留下一封花的信。", photo: "photo-petite photo-petite-center", alt: "三款合照中央的粉色滿天星與肖楠葉片透明皂" },
-  { id: "petite-lavender", name: "花信・暮色", original: "滿天星薰衣草皂", series: "petite", weight: 50, price: 180, oil: "薰衣草精油", flowers: "藍色滿天星、台灣肖楠葉片", description: "細碎花點與植物枝葉，收藏一份安靜的暮色。", photo: "photo-petite photo-petite-right", alt: "三款合照右側的滿天星與肖楠葉片透明皂；花材顏色以實品為準" },
-  { id: "classic-calendula", name: "花日・暖陽", original: "療癒金盞皂", series: "classic", weight: 100, price: 280, oil: "金盞花茉莉精油", flowers: "金盞花花瓣", description: "金黃色的花瓣，像被陽光輕輕照亮的日常。", photo: "photo-classic photo-calendula", alt: "四款合照右上的金盞花透明橢圓皂" },
-  { id: "classic-lavender", name: "花日・靜紫", original: "薰衣草皂", series: "classic", weight: 100, price: 280, oil: "薰衣草精油", flowers: "甜薰衣草葉片、乾燥薰衣草花苞", description: "葉片與花苞交織，讓植物的細節慢慢被看見。", photo: "photo-classic photo-lavender", alt: "四款合照左上的薰衣草透明方形皂" },
-  { id: "classic-rose", name: "花日・玫瑰箋", original: "玫瑰皂", series: "classic", weight: 100, price: 280, oil: "玫瑰精油", flowers: "玫瑰花瓣、粉色滿天星", description: "一抹玫瑰與點點花影，寫下想送給你的心意。", photo: "photo-classic photo-rose", alt: "四款合照右下的玫瑰花瓣透明橢圓皂" },
-  { id: "classic-chamomile", name: "花日・小晴天", original: "洋甘菊金盞雙花皂", series: "classic", weight: 100, price: 280, oil: "洋甘菊精油、橘油", flowers: "金盞花花瓣／花托、台灣肖楠葉片、原色滿天星", description: "雙花與枝葉相遇，收藏一枚明亮的小晴天。", photo: "photo-classic photo-chamomile", alt: "四款合照左下的洋甘菊金盞雙花透明橢圓皂" }
+  { id: "petite-jasmine", name: "花信・晨光", original: "滿天星金盞皂", series: "petite", weight: 50, price: 80, oil: "金盞花茉莉精油", flowers: "原色滿天星、台灣肖楠葉片", description: "素白花點與綠葉，把一束小小的晨光留在掌心。", image: "assets/IMG_2758 2.jpg", alt: "花信・晨光：原色滿天星與肖楠葉片透明皂" },
+  { id: "petite-rose", name: "花信・初綻", original: "滿天星玫瑰皂", series: "petite", weight: 50, price: 80, oil: "玫瑰精油", flowers: "粉色滿天星、台灣肖楠葉片", description: "粉色滿天星，在透明皂體裡留下一封花的信。", image: "assets/IMG_2758 3.jpg", alt: "花信・初綻：粉色滿天星與肖楠葉片透明皂" },
+  { id: "petite-lavender", name: "花信・暮色", original: "滿天星薰衣草皂", series: "petite", weight: 50, price: 80, oil: "薰衣草精油", flowers: "藍色滿天星、台灣肖楠葉片", description: "細碎花點與植物枝葉，收藏一份安靜的暮色。", image: "assets/IMG_2758 4.jpg", alt: "花信・暮色：滿天星與肖楠葉片透明皂，花材顏色以實品為準" },
+  { id: "classic-calendula", name: "花日・暖陽", original: "療癒金盞皂", series: "classic", weight: 100, price: 100, oil: "金盞花茉莉精油", flowers: "金盞花花瓣", description: "金黃色的花瓣，像被陽光輕輕照亮的日常。", image: "assets/IMG_2759 3.jpg", alt: "花日・暖陽：金盞花透明橢圓皂" },
+  { id: "classic-lavender", name: "花日・靜紫", original: "薰衣草皂", series: "classic", weight: 100, price: 100, oil: "薰衣草精油", flowers: "甜薰衣草葉片、乾燥薰衣草花苞", description: "葉片與花苞交織，讓植物的細節慢慢被看見。", image: "assets/IMG_2759 2.jpg", alt: "花日・靜紫：薰衣草透明方形皂" },
+  { id: "classic-rose", name: "花日・玫瑰箋", original: "玫瑰皂", series: "classic", weight: 100, price: 100, oil: "玫瑰精油", flowers: "玫瑰花瓣、粉色滿天星", description: "一抹玫瑰與點點花影，寫下想送給你的心意。", image: "assets/IMG_2759 4.jpg", alt: "花日・玫瑰箋：玫瑰花瓣透明橢圓皂" },
+  { id: "classic-chamomile", name: "花日・小晴天", original: "洋甘菊金盞雙花皂", series: "classic", weight: 100, price: 100, oil: "洋甘菊精油、橘油", flowers: "金盞花花瓣／花托、台灣肖楠葉片、原色滿天星", description: "雙花與枝葉相遇，收藏一枚明亮的小晴天。", image: "assets/IMG_2759 5.jpg", alt: "花日・小晴天：洋甘菊金盞雙花透明橢圓皂" }
 ];
 
 const grid = document.querySelector("#product-grid");
@@ -25,9 +25,9 @@ let toastTimer;
 // 資料皆為本檔固定商品內容；保留語意化 article 與 h3。
 grid.innerHTML = products.map(product => `
   <article class="product-card" data-product="${product.id}" data-series="${product.series}">
-    <div class="product-photo ${product.photo}" role="img" aria-label="${product.alt}"><span class="photo-weight">${product.weight}g</span></div>
+    <div class="product-photo"><img src="${encodeURI(product.image)}" alt="${product.alt}" width="529" height="529" loading="lazy"><span class="photo-weight">${product.weight}g</span></div>
     <p class="product-series">${product.series === "petite" ? "花信系列 / PETITE BOTANICAL" : "花日系列 / EVERYDAY BOTANICAL"}</p>
-    <div class="product-title-row"><h3>${product.name}</h3><span class="product-price">示範 ${money(product.price)}</span></div>
+    <div class="product-title-row"><h3>${product.name}</h3><span class="product-price">${money(product.price)}</span></div>
     <p class="product-subtitle">${product.original}</p><p class="product-description">${product.description}</p>
     <dl class="product-materials"><dt>精油</dt><dd>${product.oil}</dd><dt>花材</dt><dd>${product.flowers}</dd></dl>
     <button class="product-add" type="button" data-add="${product.id}" aria-label="將${product.name}加入模擬購物袋"><span>加入購物袋</span><span aria-hidden="true">＋</span></button>
@@ -73,7 +73,7 @@ function renderBag(focusTarget) {
   } else {
     bagItems.innerHTML = [...cart].map(([id, count]) => {
       const product = products.find(item => item.id === id);
-      return `<article class="bag-item"><div class="product-photo ${product.photo}" role="img" aria-label="${product.alt}"></div><div><h3>${product.name}</h3><p class="bag-item-price">${product.weight}g · 示範單價 ${money(product.price)}</p><div class="bag-item-controls"><button class="quantity-button" type="button" data-action="decrease" data-id="${id}" aria-label="減少${product.name}數量">−</button><span class="item-quantity" aria-label="數量 ${count}">${count}</span><button class="quantity-button" type="button" data-action="increase" data-id="${id}" aria-label="增加${product.name}數量">＋</button><button class="remove-button" type="button" data-action="remove" data-id="${id}" aria-label="移除${product.name}">移除</button></div></div></article>`;
+      return `<article class="bag-item"><div class="product-photo"><img src="${encodeURI(product.image)}" alt="${product.alt}" width="72" height="72"></div><div><h3>${product.name}</h3><p class="bag-item-price">${product.weight}g · 單價 ${money(product.price)}</p><div class="bag-item-controls"><button class="quantity-button" type="button" data-action="decrease" data-id="${id}" aria-label="減少${product.name}數量">−</button><span class="item-quantity" aria-label="數量 ${count}">${count}</span><button class="quantity-button" type="button" data-action="increase" data-id="${id}" aria-label="增加${product.name}數量">＋</button><button class="remove-button" type="button" data-action="remove" data-id="${id}" aria-label="移除${product.name}">移除</button></div></div></article>`;
     }).join("");
   }
   // 更新購物袋後，讓鍵盤焦點留在原操作；商品移除後返回關閉鈕。
